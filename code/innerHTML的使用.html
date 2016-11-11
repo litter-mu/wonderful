@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML的使用</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #cccccc;
+        }
+    </style>
+
+</head>
+<body>
+
+<input type="text" value="" id="tex" />
+<input type="button" value="设置文字" id="btn"/>
+<div id="dv"></div>
+//innerHTML可以直接获取标签的内容
+<script type="text/javascript">
+    window.onload=function(){
+        var oBtn = document.getElementById('btn');
+        var oTex = document.getElementById ('tex');
+        var oDiv = document.getElementById ('dv');
+
+        oBtn.onclick=function(){
+            oDiv.innerHTML = oTex .value;
+        }
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+    <script type="text/javascript">
+        function show(){
+            alert('a');
+        }
+        window.onload=function(){
+            var aBtn1=document.getElementById('btn1');
+            var aBtn2=document.getElementById('btn2');
+            var timer=null;
+
+
+            aBtn1.onclick=function(){
+                timer=setInterval(show,3000);
+            };
+            aBtn2.onclick=function(){
+                clearInterval(timer);//timer是让知道清除哪个定时器
+            }
+        }
+    </script>
+</head>
+<body>
+<input id="btn1" type="button" value="开启定时器"/>
+<input id="btn2" type="button" value="关闭定时器"/>
+</body>
+</html>

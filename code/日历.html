@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>日历</title>
+    <style>
+        div,ul,li,h2,p{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        #tab{
+            width: 300px;
+            margin:100px auto;
+
+            background-color: #ccc;
+            padding:0 0 10px 10px;
+        }
+        #tab li{
+            width: 50px;
+            height: 50px;
+            display: block;
+            background-color: #000;
+            text-align: center;
+            color: #fff;
+            padding: 10px;
+            font-size: 14px;
+            font-family: 微软雅黑;
+            margin:10px 3px 0 0;
+            float: left;
+        }
+        .text{
+            color:#666;
+            background:#f1f1f1;
+            border:1px solid #fff;
+            margin:10px 10px 0 0;
+            padding:5px;
+        }
+        .text h2{
+            font-size: 14px;
+            padding: 5px;
+        }
+        .text p{
+            font-size: 12px;
+            padding: 5px;
+        }
+       #tab li.active{
+            background-color: cornflowerblue;
+            color: coral;
+        }
+
+
+
+
+    </style>
+
+
+    <script type="text/javascript">
+        window.onload=function(){
+            var oLi=document.getElementsByTagName('li');
+            var otex=document.getElementById('tab').getElementsByTagName('div')[0];
+            var i=0;
+            var arr=[
+                "元旦：1月1日至3日放假三天。",
+                "春节：2月2日至8日放假7天。",
+                "妇女节：3月8日妇女节，与我无关。",
+                "清明节：4月3日至5日放假3天",
+                "劳动节：4月30日至5月2日放假3天。",
+                "端午节：6月4日至6日放假3天。",
+                "小暑：7月7日小暑。不放假。",
+                "七夕节：8月6日七夕节。不放假。",
+                "中秋节：9月10日至12日放假3天。",
+                "国庆节：10月1日至7日放假7天。",
+                "立冬：11月8日立冬。不放假。",
+                "艾滋病日:12月1日废除奴隶制国际日:12月2日。"
+
+            ];
+
+            for(i = 0; i < oLi.length; i++){
+
+                oLi[i].index=i;
+               oLi[i].onmousemove=function(){
+                   for(i = 0;i < oLi.length; i++){
+                       oLi[i].className='';
+                   }
+                   this.className ='active';
+
+                   otex.innerHTML='<h2>'+(this.index+1)+'月活动</h2><p>'+arr[this.index]+'</p>';
+               }
+            }
+        };
+    </script>
+</head>
+<body>
+
+    <div id="tab">
+        <ul>
+            <li class="active"><h2>1</h2><p>JAN</p></li>
+            <li><h2>2</h2><p>FER</p></li>
+            <li><h2>3</h2><p>MAR</p></li>
+            <li><h2>4</h2><p>APR</p></li>
+            <li><h2>5</h2><p>MAY</p></li>
+            <li><h2>6</h2><p>JUN</p></li>
+            <li><h2>7</h2><p>JUL</p></li>
+            <li><h2>8</h2><p>AUG</p></li>
+            <li><h2>9</h2><p>SEP</p></li>
+            <li><h2>10</h2><p>OCT</p></li>
+            <li><h2>11</h2><p>NOV</p></li>
+            <li><h2>12</h2><p>DEC</p></li>
+        </ul>
+        <div class="text">
+            <h2>1月活动</h2>
+            <p>反攻倒算广泛的greg风格V的方式</p>
+        </div>
+    </div>
+
+</body>
+</html>
